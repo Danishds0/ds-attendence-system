@@ -1,0 +1,193 @@
+{% load static %}
+
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 147px;
+}
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+  body{
+    background-color:#ecede9;
+  }
+
+    .as{
+      color:black;
+    }
+    label.control-label {
+      margin-top: 10px;
+  }
+      input#id_firstname {
+        height: 44px;
+        width: 306px;
+        margin-right: 282px;
+        margin-top: 17px;
+        padding: 13px;
+    }
+    input#id_lastname {
+      height: 44px;
+      width: 306px;
+      margin-right: -137px;
+      margin-top: 17px;
+      padding: 13px;
+  }
+
+    .card {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #570a7b;
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      color: #ecede9;
+    }
+  
+    .btn-info {
+      color: #000;
+      background-color: #ecede9;
+      border-color:#ecede9;
+      margin-top: 69px;
+        align-items: center;
+        width: 589px;
+    height: 77px;
+    }
+    .nav-link{
+      color: black;
+      background-color: yellow;
+      margin: -6px;
+    }
+    .name{
+      color: white;
+
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      width: 533px;
+  }
+  .nav-link.home {
+    margin-top: -92px;
+    width: 101px;
+    padding: 0px;
+}
+.nav-link.hello {
+  margin-top: -16px;
+    width: 216px;
+    padding: 5px;
+}
+.nav-link.account {
+  margin-top: -92px;
+  width: 101px;
+  padding: 0px;
+}
+.nav-link.logout {
+  margin-top: -92px;
+  width: 101px;
+  padding: 0px;
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg" style= "background-color:black">
+ <img src="{% static 'images/logo.jpg' %}" height="50px" width="250px">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <span class="nav-link hello">Hello, {{ request.user.faculty }}</span>
+      </li>
+      <li class="nav-item active">
+        <a href="{% url 'home' %}" class="nav-link home">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link account" href="{% url 'account' %}">Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link logout" href="{% url 'logout' %}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% comment %} {% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+  body{
+    background-color:#ecede9;
+  }
+
+    .card {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #570a7b;
+      background-clip: border-box;
+      border: 1px solid rgba(0,0,0,.125);
+      border-radius: .25rem;
+      color: #ecede9;
+    }
+  
+    .btn-info {
+      color: #000;
+      background-color: #ecede9;
+      border-color:#ecede9;
+      margin-top: 139px;
+        align-items: center;
+    }
+    .nav-link{
+      color: black;
+      background-color: yellow;
+      margin: -6px;
+    }
+    .name{
+      color: white;
+
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg" style= "background-color:black">
+ <img src="{% static 'images/logo.jpg' %}" height="50px" width="250px">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <span class="nav-link name">Hello, {{ request.user.faculty }}</span>
+      </li>
+      <li class="nav-item active">
+        <a href="{% url 'home' %}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'account' %}">Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>  {% endcomment %}
