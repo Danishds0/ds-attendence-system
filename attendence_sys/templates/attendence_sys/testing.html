@@ -350,3 +350,74 @@
     </div>
 </div>
 {% endblock %} {% endcomment %}
+
+
+
+
+
+
+<div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form  method="POST" action="">
+      {% csrf_token %}
+      <h1 class="CA">Create Account</h1>
+      <div class="row">
+      <div class="social-container">
+        <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="fb"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      <div class="social-container2 ">
+        <a href="{% provider_login_url "google" %}" class="gg"><i class="fab fa-google-plus-g"></i></a>
+        </div>
+      </div>
+      <span>or use your account</span>
+        {% csrf_token %} {{form.username.label}} {{form.username}}
+        {{form.email.label}} {{form.email}} {{form.password1.label}}
+        {{form.password1}} {{form.password2.label}} {{form.password2}}
+      
+        <input type="submit" name="Create User" />
+      </form>
+      
+      <a href="#">Forgot your password?</a>
+      <button>Sign In</button>
+      </form>
+    </div>
+    
+    <div class="form-container sign-up-container">
+      <form method="POSTS" action="">
+        {% csrf_token %}
+        <h1 class="signin">LOGIN</h1>
+        <div class="row">
+        <div class="social-container">
+          <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="fb"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        <div class="social-container2 ">
+          <a href="{% provider_login_url "google" %}" class="gg"><i class="fab fa-google-plus-g"></i></a>
+          </div>
+        </div>
+
+
+
+        <span>or use your email for registration</span>
+        <button>
+        <a href={% url 'login' %}> Click here to Login </a>
+        </button>
+      </form>
+      </div>
+    
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Welcome Back!</h1>
+          <p>
+            To keep connected with us please login with your personal info
+          </p>
+          <button class="ghost" id="signIn">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Create your account for Attendence System</h1>
+          <p>Enter your details and get register into the Attendence System</p>
+          <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
