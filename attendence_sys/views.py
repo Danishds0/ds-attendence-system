@@ -6,9 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.forms import inlineformset_factory
-
+from django.urls import reverse
 from .forms import *
-from .forms import CreateUserForms
+from django.contrib.auth.forms import UserCreationForm
+
 from .models import Student, Attendence
 from .filters import AttendenceFilter
 
@@ -26,7 +27,25 @@ def registerPage(request):
             form.save()
 
     context = {'form':form}
-    return render(request, 'attendence_sys/login.html', context)
+    return render(request, 'attendence_sys/register.html', context)
+
+# def register(request):
+#     if request.method == "POST":
+#         fm = CustomerRegistrationForm(request.POST)
+#         if fm.is_valid():
+#             fm.save()
+#             email = request.POST.get('email')
+#             return redirect(kwargs={'email_':str(email)})
+#             # user = User.objects.get(email=request.POST.get('id_email'))
+#             # new_customer = Customer()
+#             # new_customer.user = user
+#             # new_customer.name = user.first_name + user.last_name
+            
+#             # new_customer.save()
+#     else:
+#         fm = CustomerRegistrationForm()
+#     return render(request,'attendence_sys/register.html',{'fm':fm})
+    
 
 @login_required(login_url = 'login')
 def home(request):

@@ -1,4 +1,5 @@
 {% load socialaccount %}
+{% load static %}
 {% providers_media_js %}
 
 <!DOCTYPE html>
@@ -132,8 +133,8 @@
 		}
   
 		a {
-		  color: #e19007;
-		  font-size: 14px;
+		  color: #ffffff;
+		  font-size: 11px;
 		  text-decoration: none;
 		  margin: 15px 0;
 		}
@@ -398,18 +399,13 @@
 					<a href="{% provider_login_url "google" %}" class="gg"><i class="fab fa-google-plus-g"></i></a>
 				  </div>
 				</div>
+
+
+
 			  <span>or use your email for registration</span>
-			  {% comment %} {{form.username.label}} {% endcomment %}
-			  {{form.as_p}}
-			  {% comment %} <input type="text" name="username" placeholder="Username" class="form-control"> {% endcomment %}
-			  {{form.email}}
-			  {% comment %} <input type="text" name="email" placeholder="Email" class="form-control"> {% endcomment %}
-			  {{form.password1}}
-			  {% comment %} <input type="text" name="password1" placeholder="Password" class="form-control"> {% endcomment %}
-			  {{form.password2}}
-			  {% comment %} <input type="text" name="password2" placeholder="Confirm Password" class="form-control"> {% endcomment %}
-			  <button type="submit" name="Create User">Sign Up</button>
-			  
+			  <button>
+			  <a href={% url 'register' %}> Click here to Register </a>
+			  </button>
 			</form>
 		  </div>
 		
@@ -418,7 +414,7 @@
 		<div class="form-container sign-in-container">
 		  <form  method="POST" action="">
 			{% csrf_token %}
-			<h1 class="signin">Sign in</h1>
+			<h1 class="signin">LOG IN</h1>
 			<div class="row">
 			<div class="social-container">
 			  <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="fb"><i class="fab fa-facebook-f"></i></a>
@@ -432,7 +428,7 @@
 			<input type="password" name="password" placeholder="Password..." class="form-control" >
 			
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button>Log In</button>
 		  </form>
 		</div>
 		<div class="overlay-container">
@@ -660,3 +656,16 @@
 		</div>
 	</div>
 </div> {% endcomment %}
+
+
+
+
+{% comment %} {{form.username.label}} {% endcomment %}
+{% comment %} {{form.as_p}} {% endcomment %}
+{% comment %} <input type="text" name="username" placeholder="Username" class="form-control"> {% endcomment %}
+{% comment %} {{form.email}} {% endcomment %}
+{% comment %} <input type="text" name="email" placeholder="Email" class="form-control"> {% endcomment %}
+{% comment %} {{form.password1}} {% endcomment %}
+{% comment %} <input type="text" name="password1" placeholder="Password" class="form-control"> {% endcomment %}
+{% comment %} {{form.password2}} {% endcomment %}
+{% comment %} <input type="text" name="password2" placeholder="Confirm Password" class="form-control"> {% endcomment %}

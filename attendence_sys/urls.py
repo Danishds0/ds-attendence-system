@@ -15,7 +15,7 @@ urlpatterns = [
     path('updateStudentRedirect/', views.updateStudentRedirect, name='updateStudentRedirect'),
     path('updateStudent/', views.updateStudent, name='updateStudent'),
     path('attendence/', views.takeAttendence, name='attendence'),
-    path('register/', views.registerPage, name='register'),
+    path('register/',views.registerPage,name='register'),
     path('accounts/', include('allauth.urls')),
     path('reset_password/', auth_views.PasswordResetView.as_view(), name="reset_password"),
     # path('video_feed/', views.videoFeed, name='video_feed'),
