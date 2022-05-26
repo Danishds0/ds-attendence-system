@@ -1,1 +1,1 @@
-web: gunicorn manage:app --log-file -
+web: gunicorn Attendence_System.wsgi --log-file -
